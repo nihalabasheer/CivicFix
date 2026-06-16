@@ -1,6 +1,36 @@
 # CivicFix
 
-A civic issue reporting platform where citizens submit problems with photos, AI classifies them, and the relevant department manages resolution.
+CivicFix is an AI-powered civic issue reporting platform that helps citizens report public infrastructure problems through image uploads.
+
+Users can submit issues such as potholes and garbage dumps by uploading a photo and providing a location. The system uses a YOLOv8-based computer vision model to classify the issue and automatically assign it to the appropriate department.
+
+Department officials can view issues assigned to their department, update the issue status, and track progress until resolution. Citizens can monitor the status of their submitted reports through their dashboard.
+
+## Features
+
+* User Registration and Login
+* Department Login
+* Image Upload for Issue Reporting
+* AI-Based Issue Classification using YOLOv8
+* Automatic Department Assignment
+* Issue Tracking Dashboard
+* Status Updates (Pending, Assigned, In Progress, Resolved)
+* Role-Based Access Control
+
+## Departments
+
+* Roads Department
+* Waste Management Department
+
+## Tech Stack
+
+* Python
+* Flask
+* MySQL
+* YOLOv8
+* HTML
+* CSS
+* Bootstrap 5
 
 ## Setup
 
@@ -19,8 +49,8 @@ A civic issue reporting platform where citizens submit problems with photos, AI 
 
    Activate it:
 
-   - Windows: `venv\Scripts\activate`
-   - macOS/Linux: `source venv/bin/activate`
+   * Windows: `venv\Scripts\activate`
+   * macOS/Linux: `source venv/bin/activate`
 
 3. **Install requirements**
 
@@ -29,8 +59,6 @@ A civic issue reporting platform where citizens submit problems with photos, AI 
    ```
 
 4. **Create `.env` file**
-
-   Create a `.env` file in the project root:
 
    ```env
    SECRET_KEY=your-secret-key
@@ -46,32 +74,28 @@ A civic issue reporting platform where citizens submit problems with photos, AI 
    python setup_db.py
    ```
 
-   This creates the database, tables, default departments, and demo accounts. No manual SQL is required.
-
 6. **Run the application**
 
    ```bash
    python app.py
    ```
 
-   Open http://127.0.0.1:5000 in your browser.
+   Open: http://127.0.0.1:5000
 
 ## Demo Accounts
 
-Use these department accounts to explore the department dashboard:
+### Roads Department
 
-**Roads Department**
+* Email: `road@civicfix.com`
+* Password: `road123`
 
-- Email: `road@civicfix.com`
-- Password: `road123`
+### Waste Management Department
 
-**Waste Management Department**
+* Email: `waste@civicfix.com`
+* Password: `waste123`
 
-- Email: `waste@civicfix.com`
-- Password: `waste123`
-
-Citizens can register a normal user account from the registration page.
+Citizens can register their own accounts and submit issues.
 
 ## Database Reference
 
-See `schema.sql` for the full database schema.
+See `schema.sql` for the complete database schema.
