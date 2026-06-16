@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}{% block page_title %}User{% endblock %} — CivicFix{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-3 mb-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h6 class="text-muted text-uppercase small mb-3">Menu</h6>
+                <div class="list-group list-group-flush">
+                    <a href="{{ url_for('user.dashboard') }}"
+                       class="list-group-item list-group-item-action {% if request.endpoint == 'user.dashboard' %}active{% endif %}">
+                        Dashboard
+                    </a>
+                    <a href="{{ url_for('user.report_issue') }}"
+                       class="list-group-item list-group-item-action {% if request.endpoint == 'user.report_issue' %}active{% endif %}">
+                        Report Issue
+                    </a>
+                    <a href="{{ url_for('user.my_issues') }}"
+                       class="list-group-item list-group-item-action {% if request.endpoint == 'user.my_issues' %}active{% endif %}">
+                        My Issues
+                    </a>
+                    <a href="{{ url_for('auth.logout') }}"
+                       class="list-group-item list-group-item-action text-danger">
+                        Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-9">
+        {% block user_content %}{% endblock %}
+    </div>
+</div>
+{% endblock %}
