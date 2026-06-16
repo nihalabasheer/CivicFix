@@ -3,6 +3,7 @@
 
 # Python
 __pycache__/
+*.pyc
 *.py[cod]
 *.pyo
 *.pyd
@@ -15,9 +16,8 @@ venv/
 .venv/
 env/
 
-# User uploads (keep folder, ignore files)
-uploads/*
-!uploads/.gitkeep
+# User uploads
+uploads/
 
 # IDE / OS
 .vscode/
